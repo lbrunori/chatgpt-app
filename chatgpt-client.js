@@ -3,7 +3,7 @@ const https = require('https');
 // When the button is clicked, execute the API request
 const getChatGPTRequest = (question) => {
     const prompt = question;
-    const apiKey = "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";
+    const apiKey = "";
     const headers = {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${apiKey}`
