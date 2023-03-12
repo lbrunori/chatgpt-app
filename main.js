@@ -1,16 +1,17 @@
 // Modules
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, Tray} = require('electron')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
+let tray
 
 // Create a new BrowserWindow when `app` is ready
 function createWindow () {
 
   mainWindow = new BrowserWindow({
-    icon: __dirname + 'icon.png',
-    width: 1000, height: 800,
+    icon: 'icon.svg',
+    width: 900, height: 800,
     webPreferences: {
       // --- !! IMPORTANT !! ---
       // Disable 'contextIsolation' to allow 'nodeIntegration'
@@ -42,4 +43,3 @@ app.on('window-all-closed', e => {
 app.on('activate', () => {
   if (mainWindow === null) createWindow()
 })
-
